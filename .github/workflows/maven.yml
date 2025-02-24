@@ -27,6 +27,19 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
+    - name: Set up Maven settings
+      run: |
+          mkdir -p ~/.m2
+          echo "<settings>
+            <servers>
+              <server>
+                <id>github</id>
+                <username>${{ secrets.GITHUB_ACTOR }}</username>
+                <password>${{ secrets.GITHUB_TOKEN }}</password>
+              </server>
+            </servers>
+          </settings>" > ~/.m2/settings.xml
+          
     - name: Build with Maven
       run: mvn clean package --file='bwceTestApp.parent/pom.xml'
 
