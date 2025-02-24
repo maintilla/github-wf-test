@@ -10,6 +10,21 @@
     <module>../bwceTestApp.module</module>
     <module>../bwceTestApp</module>
   </modules>
+  <repositories>
+    <repository>
+      <id>github</id>
+      <url>https://maven.pkg.github.com/maintilla/github-wf-test</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+  <distributionManagement>
+    <repository>
+      <id>github</id>
+      <url>https://maven.pkg.github.com/maintilla/github-wf-test</url>
+    </repository>
+  </distributionManagement>
   <build>
     <plugins>
       <plugin>
